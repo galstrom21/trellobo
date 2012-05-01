@@ -97,7 +97,7 @@ bot = Cinch::Bot.new do
           else
             cards = list.cards
             if cards.count == 0
-              m.reply "Nothing doing on that list today, #{m.user.nick}."
+              m.reply "Nothing doing on that right now, #{m.user.nick}."
             else
               ess = (cards.count == 1) ? "" : "s"
               m.reply "I have #{cards.count} card#{ess} today"
