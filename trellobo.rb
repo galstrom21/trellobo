@@ -1,3 +1,5 @@
+$LOAD_PATH.unshift(*Dir[File.dirname(__FILE__) + "/vendor/gems/**/lib"])
+
 require 'cinch'
 require 'trello'
 require 'json'
