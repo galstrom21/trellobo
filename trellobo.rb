@@ -102,7 +102,7 @@ bot = Cinch::Bot.new do
               ess = (cards.count == 1) ? "" : "s"
               m.reply "I have #{cards.count} card#{ess} today"
               cards.each { |c|
-                m.reply "  ->  #{c.short_id}. #{c.name} - #{c.member_ids.collect {|m| x=Member.find(m).full_name }.join("/").presence || "UNASSIGNED"}"
+                m.reply "  ->  #{c.short_id}. #{c.name} - #{c.member_ids.collect {|m| x=Member.find(m).username }.join("/").presence || "UNASSIGNED"}"
               }
             end
           end
