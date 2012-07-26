@@ -101,10 +101,8 @@ bot = Cinch::Bot.new do
             else
               ess = (cards.count == 1) ? "" : "s"
               m.reply "I have #{cards.count} card#{ess} today"
-              inx = 1
               cards.each { |c|
-                m.reply "  ->  #{c.short_id} . #{c.name} - Assigned to: #{c.member_ids.collect {|m| x=Member.find(m).full_name }.join(", ").presence || "No One"}"
-                inx += 1
+                m.reply "  ->  #{c.short_id}. #{c.name} - Assigned to: #{c.member_ids.collect {|m| x=Member.find(m).full_name }.join(", ").presence || "No One"}"
               }
             end
           end
