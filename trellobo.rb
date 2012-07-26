@@ -103,7 +103,7 @@ bot = Cinch::Bot.new do
               m.reply "I have #{cards.count} card#{ess} today"
               inx = 1
               cards.each { |c|
-                m.reply "  ->  #{inx.to_s}. #{c.name}"
+                m.reply "  ->  #{inx.to_s}. #{c.name} - Assigned: #{c.member_ids.collect {|m| x=Member.find(m).full_name }.join(", ")}"
                 inx += 1
               }
             end
